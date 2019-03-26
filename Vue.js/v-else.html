@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-else指令</title>
+    <script type='text/javascript' src="vue.js"></script>
+</head>
+<body>
+<div id="example">
+    <p v-if="ok">我是对的</p>
+    <p v-else="ok">我是错的</p>
+</div>
+</body>
+</html>
+<script type="text/javascript">
+    var exampleVM2 = new Vue({
+        el: '#example',
+        data: {
+            ok: false
+        }
+    })
+</script>

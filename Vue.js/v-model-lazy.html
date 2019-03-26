@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>v-model指令lazy参数</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+<div id="example">
+    <input  v-model.lazy="msg"><br/>
+    {{msg}}
+</div>
+</body>
+</html>
+<script>
+    new Vue({
+        el: '#example',
+        data: {
+            msg: '内容是在change事件后才改变的'
+        }
+    })
+</script>
