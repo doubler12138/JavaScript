@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Frameset Example</title>
+</head>
+<body>
+<input type="button" onclick="a()" value="打开百度"/>
+<input type="button" onclick="b()" value="关闭百度"/>
+<iframe name="test" width="700" height="700"></iframe>
+<script>
+    function a(){
+        baidu = window.open("http://www.baidu.com","test");
+    }
+    function b(){
+        baidu.close();
+    }
+</script>
+</body>
+</html>

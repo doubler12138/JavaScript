@@ -1,0 +1,11 @@
+#example1 {
+    border: 3px double black;
+    padding: 3px;
+}
+#example2{
+    border: 3px double silver;
+}
+td {
+    border: 1px solid gray;
+    width: 200px;
+}
