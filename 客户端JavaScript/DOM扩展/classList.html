@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>classList属性</title>
+</head>
+<body>
+<div class="test1 test2">
+    <p>
+        this is a test param
+    </p>
+</div>
+<script>
+    let div = document.body.getElementsByClassName("test1 test2");
+    div[0].classList.add("test3");
+    alert(div[0].webkitMatchesSelector(".test1.test2.test3"));
+</script>
+</body>
+</html>

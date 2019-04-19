@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义数据属性</title>
+</head>
+<body>
+<div class="test" data-name="Bob" data-sex="1" data-age="23">
+    <p>this is a test param</p>
+</div>
+<script>
+    let div = document.getElementsByClassName("test")[0];
+    alert(div.dataset.name);
+</script>
+</body>
+</html>

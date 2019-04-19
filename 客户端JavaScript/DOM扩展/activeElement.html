@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>activeElement属性</title>
+</head>
+<body>
+<input type="text" value="test"/>
+<script>
+    let input = document.body.firstElementChild;
+    input.focus();
+    alert(document.activeElement.nodeName == "INPUT");
+</script>
+</body>
+</html>

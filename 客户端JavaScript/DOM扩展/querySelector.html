@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>querySelector()方法</title>
+</head>
+<body>
+<div class="example">
+    <p>This is a test param</p>
+</div>
+<script>
+    let div = document.querySelector(".example");
+    let p = document.createElement("p");
+    p.appendChild(document.createTextNode("test"));
+    div.appendChild(p);
+</script>
+</body>
+</html>
