@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>isSameNode()和isEqualNode()方法</title>
+</head>
+<body>
+<script>
+    let body1 = document.body;
+    let body2 = document.documentElement.firstElementChild.nextElementSibling;
+    alert(body1.isSameNode(body2));
+    let div1 = document.createElement("div");
+    div1.setAttribute("class", "box");
+    let div2 = document.createElement("div");
+    div2.setAttribute("class", "box");
+    alert(div1.isSameNode(div2));
+    alert(div1.isEqualNode(div2));
+    alert(div2.isEqualNode(div1));
+</script>
+</body>
+</html>

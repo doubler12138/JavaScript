@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM样式属性和方法</title>
+</head>
+<body>
+<div style="width: 100px!important; height:100px; background: beige; padding: 2px; margin-left: 200px; margin-top: 200px">
+</div>
+
+<script>
+    let div = document.body.firstElementChild;
+    let table = document.createElement("table");
+    table.setAttribute("style","width:500px;");
+    let caption = table.createCaption();
+    caption.appendChild(document.createTextNode("div的样式信息"));
+    document.body.appendChild(table);
+    let tbody = document.createElement("tbody");
+    let row0 = tbody.insertRow(0);
+    row0.insertCell(0).appendChild(document.createTextNode("CSS属性数量"));
+    row0.insertCell(1).appendChild(document.createTextNode(div.style.length));
+    for(let i=0; i < div.style.length; i++){
+        let row = tbody.insertRow(i+1);
+        row.insertCell(0).appendChild(document.createTextNode(div.style.item(i)));
+        row.insertCell(1).appendChild(document.createTextNode(div.style.getPropertyValue(div.style.item(i))));
+    }
+    table.appendChild(tbody);
+    alert(div.style.getPropertyPriority(div.style.item(17)))
+</script>
+</body>
+</html>
