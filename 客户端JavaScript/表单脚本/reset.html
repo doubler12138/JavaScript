@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>重置表单</title>
+</head>
+<body>
+<form class="form" action="#">
+    <input type="text" value="初始值1" /><br/>
+    <input type="text" value="初始值2" /><br/>
+    <input type="reset" value="重置1" />
+    <button type="reset" >重置2</button>
+    <button class="button">重置3</button>
+</form>
+</body>
+<script>
+    let form = document.forms[0];
+    let btn = document.querySelector(".button");
+    btn.addEventListener("click", function(){
+        form.reset();
+    }, false);
+    form.addEventListener("reset", function(){
+        alert("表单已被重置");
+    }, false);
+</script>
+</html>
