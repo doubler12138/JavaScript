@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>创建自定义事件</title>
+</head>
+<body>
+<div class="div">
+
+</div>
+</body>
+<script>
+    let div = document.querySelector(".div");
+    div.addEventListener("myEvent", function(event){
+        let text = document.createTextNode("hello " + event.detail.name);
+        event.target.appendChild(text);
+    })
+    let event = document.createEvent("CustomEvent");
+    let detial = {name: "lixin"};
+    event.initCustomEvent("myEvent", true, true, detial);
+    div.dispatchEvent(event);
+</script>
+</html>

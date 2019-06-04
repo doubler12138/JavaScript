@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模拟鼠标事件</title>
+</head>
+<body>
+<input class="button" type="button" value="点击" />
+</body>
+<script>
+    let btn = document.querySelector(".button");
+    btn.addEventListener("click",function(){
+        alert("test");
+    },true);
+    let event = document.createEvent("MouseEvent");
+    event.initMouseEvent('click', true, true, document.defaultView, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+    btn.dispatchEvent(event);
+</script>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模拟键盘事件</title>
+</head>
+<body>
+<input type="text" class="text" />
+</body>
+<script>
+    let inp = document.querySelector(".text");
+    inp.addEventListener("keydown", function(event){
+        alert(event.key);
+    }, false);
+    let event = document.createEvent('KeyboardEvent');
+    event.initKeyboardEvent("keydown", true, true, document.defaultView, 'a');
+    inp.dispatchEvent(event);
+</script>
+</html>
