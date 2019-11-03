@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>判断一下offsetHeight和margin-top的区别</title>
+</head>
+<style>
+    body {
+        margin: 0px;
+    }
+    .box1 {
+        width: 300px;
+        height: 300px;
+        margin: 100px;
+        background: #333;
+        overflow: hidden;
+        position: relative;
+    }
+    .box2 {
+        width: 200px;
+        height: 200px;
+        margin: 100px;
+        background: #666;
+        overflow: hidden;
+    }
+    .box3 {
+        width: 100px;
+        height: 100px;
+        margin: 100px;
+        background: #999;
+    }
+</style>
+<body>
+<div class="box1">
+    <div class="box2">
+        <div class="box3"></div>
+    </div>
+</div>
+</body>
+<script>
+    let box1 = document.querySelector(".box1");
+    let box2 = document.querySelector(".box2");
+    let box3 = document.querySelector(".box3");
+    console.log('box1: ' + box1.offsetLeft + ',' + box1.offsetTop)
+    console.log('box2: ' + box2.offsetLeft + ',' + box2.offsetTop)
+    console.log('box3: ' + box3.offsetLeft + ',' + box3.offsetTop)
+</script>
+</html>

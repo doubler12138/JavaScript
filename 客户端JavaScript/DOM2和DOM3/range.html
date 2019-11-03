@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Range类型的属性</title>
+</head>
+<body>
+<div class="div">
+    <p id="p1"><b>Hello</b> world!</p>
+</div>
+</body>
+<script>
+    let range = document.createRange();
+    let p1 = document.getElementById("p1");
+    range.selectNode(p1);
+    alert(range.commonAncestorContainer.nodeName);
+</script>
+</html>

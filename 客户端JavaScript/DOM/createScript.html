@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动态脚本</title>
+</head>
+<body>
+<script>
+    let script = document.createElement("script");
+    script.type = "text/javascript";
+    script.appendChild(document.createTextNode("(function(){ alert('1');})();"));
+    document.body.appendChild(script);
+</script>
+</body>
+</html>

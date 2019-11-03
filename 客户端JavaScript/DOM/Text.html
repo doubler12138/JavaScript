@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Text类型</title>
+</head>
+<body>
+<script>
+    let div = document.createElement("div");
+    div.className = "example";
+    let passage = document.createTextNode("parentNode's class = ");
+    passage.appendData(div.className);
+    div.appendChild(passage);
+    document.body.appendChild(div);
+    alert(passage.data);
+</script>
+</body>
+</html>

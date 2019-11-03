@@ -1,0 +1,40 @@
+<html>
+<body>
+	<canvas id="canvas" width="500" height="500">
+	</canvas>
+</body>
+</html>
+<script type="text/javascript">
+	const ctx = canvas.getContext('2d');
+	ctx.beginPath();
+	ctx.moveTo(10, 10);
+	ctx.lineTo(110, 10);
+	ctx.lineTo(110, 110);
+	ctx.lineTo(10, 110);
+	//有宽度的线条的坐标以其中心点为基点，所以需要减去其宽度的一半来闭合线条
+	ctx.lineTo(10, 5);
+	ctx.lineWidth = 10;
+	ctx.strokeStype = "#000"
+	ctx.stroke();
+	ctx.closePath();
+	console.log(canvas.toDataURL());
+	ctx.beginPath();
+	ctx.moveTo(300, 10);
+	ctx.lineTo(400, 10);
+	ctx.lineTo(400, 110);
+	ctx.lineTo(300, 110);
+	ctx.lineTo(300, 10);
+	ctx.lineWidth = 10;
+	ctx.strokeStype = "#000";
+	ctx.lineCap = "round";
+	ctx.lineJoin = "round";
+	ctx.stroke();
+	ctx.closePath();
+	console.log(canvas.toDataURL());
+</script>
+<style>
+	#canvas {
+		background: #ccc;
+		border-radius: 10px;
+	}
+</style>

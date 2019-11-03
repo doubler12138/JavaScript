@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件对象type属性</title>
+</head>
+<body>
+<input class="button" type="button" value="点击"/>
+</body>
+<script>
+    let btn = document.querySelector(".button");
+    let handler = function(event) {
+        switch (event.type) {
+            case "click":
+                alert("Clicked");
+                break;
+            case "mouseover":
+                event.target.style.backgroundColor = "red";
+                break;
+            case "mouseout":
+                event.target.style.backgroundColor = "";
+                break;
+        }
+    };
+    btn.onclick = handler;
+    btn.onmouseover = handler;
+    btn.onmouseout = handler;
+</script>
+</html>

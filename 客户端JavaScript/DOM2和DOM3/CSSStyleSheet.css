@@ -1,0 +1,9 @@
+.div {
+    padding: 5px;
+    border: maroon 3px;
+    background-color: silver;
+    width: 300px;
+    height: 300px;
+    margin-left: 200px;
+    margin-top: 200px;
+}

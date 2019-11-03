@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ELement类型</title>
+</head>
+<body>
+<div id="example1" style="width: 300px;height: 300px; margin-left: 20px">
+    <p>test</p>
+</div>
+<input type="button" id="example2" onclick="copyclick()" value="确定"/>
+<script>
+    function copyclick(){
+      alert("1");
+    };
+
+    let button = document.getElementById("example2");
+    let div = document.getElementById("example1");
+    let divAttribute = div.getAttribute("style");
+    let buttonAttribute = button.getAttribute("onclick");
+    let text1 = document.createTextNode(divAttribute);
+    let text2 = document.createTextNode(buttonAttribute);
+    let p1 = document.createElement("p");
+    let p2 = document.createElement("p");
+    p1.appendChild(text1);
+    p2.appendChild(text2);
+    div.appendChild(p1);
+    div.appendChild(p2);
+    alert(div.style);
+    alert(button.onclick);
+</script>
+</body>
+</html>

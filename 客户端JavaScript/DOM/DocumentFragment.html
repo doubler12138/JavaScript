@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DocumentFragment类型</title>
+</head>
+<body>
+<ul id="myList">
+</ul>
+<script>
+    let fragment = document.createDocumentFragment();
+    let ul = document.getElementById("myList");
+    for(let i=0; i < 3; i++){
+        li = document.createElement("li");
+        li.appendChild(document.createTextNode("Item" + i));
+        fragment.appendChild(li);
+    }
+    ul.appendChild(fragment);
+</script>
+</body>
+</html>

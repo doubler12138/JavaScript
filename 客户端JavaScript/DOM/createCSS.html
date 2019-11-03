@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动态样式</title>
+</head>
+<body>
+<div class="div1">
+    <p>test</p>
+</div>
+<div class="div2">
+    <p>test</p>
+</div>
+<div class="div3">
+    <p>test</p>
+</div>
+<script>
+    let  head = document.getElementsByTagName("head")[0];
+    function loadStyles(url){
+        let link = document.createElement("link");
+        link.rel = "stylesheet";
+        link.type = "text/css";
+        link.href = url;
+        head.appendChild(link);
+    }
+    loadStyles("createCSS.css");
+    let style = document.createElement("style");
+    style.type = "text/css";
+    style.appendChild(document.createTextNode(".div2{ background: red; width: 400px}"));
+    head.appendChild(style);
+</script>
+</body>
+</html>

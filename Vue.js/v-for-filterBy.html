@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-for指令filterBy过滤器</title>
+    <script type="text/javascript" src="vue.js"></script>
+</head>
+<body>
+<div id="search">
+    <input type="text" v-model="key" />
+    <ul>
+        <li v-for="item in filterlist">{{item.n}}</li>
+    </ul>
+</div>
+
+</body>
+</html>
+<script>
+    new Vue({
+        el: '#search',
+        data:{
+            key: "",
+            list: [
+                {
+                    n: '快车',
+                    tag: '1',
+                },
+                {
+                    n: '出租车',
+                    tag: '2'
+                },
+                {
+                    n: '顺风车',
+                    tag: '3'
+                },
+                {
+                    n: '专车',
+                    tag: '4'
+                }
+            ]
+        },
+        computed: {
+            filterlist: function(){
+                var key = this.key;
+                return this.list.filter(function(item){
+                    if(key !== ''){
+                        if(key == item.n)
+                            return item;
+                    }else{
+                        return item;
+                    }
+                })
+            }
+        }
+    })
+</script>

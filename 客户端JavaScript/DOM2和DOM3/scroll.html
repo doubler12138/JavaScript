@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    .fatherDiv {
+        width: 200px;
+        height: 200px;
+        padding: 20px;
+        overflow: auto;
+    }
+    .childDiv {
+        width: 400px;
+        height: 400px;
+        background: aqua;
+    }
+</style>
+<body>
+<div class="fatherDiv">
+    <div class="childDiv"></div>
+</div>
+</body>
+<script>
+    let fatherDiv = document.querySelector(".fatherDiv");
+    let childDiv = document.querySelector(".childDiv");
+    fatherDiv.scrollTo(0,100);
+    console.log("fatherDiv.clientWidth: " + fatherDiv.clientWidth);
+    console.log("fatherDiv.clientHeight: " + fatherDiv.clientHeight);
+    console.log("fatherDiv.scrollWidth: " + fatherDiv.scrollWidth);
+    console.log("fatherDiv.scrollHeight: " + fatherDiv.scrollHeight);
+    alert(fatherDiv.getBoundingClientRect().top)
+</script>
+</html>

@@ -1,0 +1,67 @@
+<html>
+<head>
+	<script type="text/javascript" src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+<body>
+	<div class="container"></div>
+</body>
+<script type="text/javascript">
+	let innerHtml = "";
+	let startTime = ""
+	function insertEle() {
+  		$(this).html(innerHtml);
+	}
+	$(".container").on("touchstart", function(e) {
+		console.log(e);
+		if(!startTime) {
+			startTime = e.timeStamp;
+		}
+		time = e.timeStamp - startTime;
+		let y = e.originalEvent.changedTouches[0].clientY;
+		let x = e.originalEvent.changedTouches[0].clientX ;
+		innerHtml = '<div class="box" style="top: ' + y + 'px;left: ' + x + 'px"></div>'
+  		insertEle.call(this);
+  		let offset = $('.box').offset();
+		console.log(offset, time);
+	});
+
+	$(".container").on("touchmove", function(e) {
+		let  y = e.originalEvent.changedTouches[0].clientY;
+		let  x = e.originalEvent.changedTouches[0].clientX;
+		time = e.timeStamp - startTime;
+		innerHtml = '<div class="box" style="top: ' + y + 'px;left: ' + x + 'px"></div>'
+  		insertEle.call(this);
+  		let offset = $('.box').offset();
+		console.log(offset, time)
+	});
+
+	$(".container").on("touchend", function(e) {
+  		innerHtml = "";
+  		insertEle.call(this);
+	});
+</script>
+<style type="text/css">
+	html, body {
+		width: 100%;
+		height: 100%;
+		margin: 0;
+		padding: 0;
+	}
+	.container {
+		position: absolute;
+		width: 700px;
+		height: 700px;
+		top: 50px;
+		left: 50px;
+		background: #000;
+	}
+	.box {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 10px;
+		height: 10px;
+		border-radius: 50%;
+		background: #fff;
+	}
+</style>
+</html>

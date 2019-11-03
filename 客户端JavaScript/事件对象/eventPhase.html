@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件对象eventPhase属性</title>
+</head>
+<body>
+<input type="button" class="button" value="click" />
+</body>
+<script>
+    let btn = document.querySelector(".button");
+    let handler = function (event) {
+        switch (event.eventPhase) {
+            case 1:
+                alert("目前处于事件捕获阶段");
+                break;
+            case 2:
+                alert("目前处于目标对象上");
+                break;
+            case 3:
+                alert("目前处于事件冒泡阶段");
+                break;
+        }
+    };
+    document.body.addEventListener("click", handler, true);
+    btn.onclick = handler;
+    document.body.onclick = handler;
+</script>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>创建表格</title>
+</head>
+<body>
+<script>
+    let table = document.createElement("table");
+    let caption = table.createCaption();
+    caption.appendChild(document.createTextNode("Test"));
+    let row = table.insertRow(0);
+    let td = row.insertCell(0);
+    td.appendChild(document.createTextNode("tr1 td1"));
+    document.body.appendChild(table);
+</script>
+</body>
+</html>
